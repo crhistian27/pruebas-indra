@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Problema 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12">
+        <p>Casas:</p>
+        <ion-item lines="none">
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto0"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto1"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto2"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto3"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto4"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto5"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto6"></ion-input>
+          <ion-input  type="number" name="punto" [(ngModel)]="array.punto7"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12">
+        <p>Dias:</p>
+        <ion-item lines="none">
+          <ion-input  type="number" name="dias" [(ngModel)]="dias"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-button  type="button" expand="block" (click)="calcular()">calcular</ion-button>
+        <ion-button  color="danger" type="button" expand="block" (click)="limpiar()">Limpiar</ion-button>
+      </ion-col>
+
+      <ion-col size="12">
+        <p>Resultado:</p>
+        <ion-item lines="none" >
+          <ion-input  type="number" name="punto2"  readonly *ngFor="let a of array2" value="{{a}}"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+    </ion-row>
+    
+  </ion-grid>
+ 
+</ion-content>
+
+<ion-footer class="ion-no-border" class="mifooter">
+  <ion-toolbar>
+
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+
+        <ion-tab-button (click)="irfooter('home')">
+          <ion-icon name="cog-outline"></ion-icon>
+          <ion-label>Problema 1</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="irfooter('page2')">
+          <ion-icon name="cog-outline"></ion-icon>
+          <ion-label>Problema 2</ion-label>
+        </ion-tab-button>
+
+
+      </ion-tab-bar>
+    </ion-tabs>
+
+  </ion-toolbar>
+</ion-footer>

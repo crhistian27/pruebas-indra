@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Problema 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12">
+        <p>Cadena de texto:</p>
+        <ion-item lines="none">
+          <ion-input  type="text" name="texto" [(ngModel)]="texto"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-button  type="button" expand="block" (click)="calcular()">ejecutar</ion-button>
+        <ion-button  color="danger" type="button" expand="block" (click)="limpiar()">Limpiar</ion-button>
+      </ion-col>
+     
+    </ion-row>
+
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <p class="texto">
+           <strong  *ngFor="let item of resp; let i = index" > <span  *ngFor="let a of item">{{a}} </span> </strong> 
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border" class="mifooter">
+  <ion-toolbar>
+
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+
+        <ion-tab-button (click)="irfooter('home')">
+          <ion-icon name="cog-outline"></ion-icon>
+          <ion-label>Problema 1</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="irfooter('page2')">
+          <ion-icon name="cog-outline"></ion-icon>
+          <ion-label>Problema 2</ion-label>
+        </ion-tab-button>
+
+
+      </ion-tab-bar>
+    </ion-tabs>
+
+  </ion-toolbar>
+</ion-footer>
+

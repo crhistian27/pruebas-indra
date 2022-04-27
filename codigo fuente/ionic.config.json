@@ -1,0 +1,7 @@
+{
+  "name": "indra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
